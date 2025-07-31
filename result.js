@@ -23,12 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
     recommendation = 'المساعدة الذاتية';
     detailedMessage = `
       <p class="mb-3">أعراضك تبدو خفيفة نسبياً. نوصي بـ:</p>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-check-circle text-success me-2"></i>ممارسة تقنيات الاسترخاء والتنفس العميق</li>
-        <li><i class="fas fa-check-circle text-success me-2"></i>الحفاظ على روتين يومي منتظم</li>
-        <li><i class="fas fa-check-circle text-success me-2"></i>البقاء على تواصل مع العائلة والأصدقاء</li>
-        <li><i class="fas fa-check-circle text-success me-2"></i>ممارسة الرياضة الخفيفة بانتظام</li>
-      </ul>
+      <div class="recommendation-item">
+        <i class="fas fa-check-circle text-success me-2"></i>ممارسة تقنيات الاسترخاء والتنفس العميق
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-check-circle text-success me-2"></i>الحفاظ على روتين يومي منتظم
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-check-circle text-success me-2"></i>البقاء على تواصل مع العائلة والأصدقاء
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-check-circle text-success me-2"></i>ممارسة الرياضة الخفيفة بانتظام
+      </div>
     `;
     icon = 'fas fa-heart';
   } else if (score <= 17) {
@@ -37,12 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     recommendation = 'مجموعة الدعم';
     detailedMessage = `
       <p class="mb-3">أعراضك متوسطة. نوصي بـ:</p>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-users text-warning me-2"></i>الانضمام لمجموعات الدعم النفسي</li>
-        <li><i class="fas fa-users text-warning me-2"></i>التحدث مع أشخاص مروا بتجارب مشابهة</li>
-        <li><i class="fas fa-users text-warning me-2"></i>ممارسة تقنيات التأمل واليقظة الذهنية</li>
-        <li><i class="fas fa-users text-warning me-2"></i>تتبع الأعراض في دفتر يومي</li>
-      </ul>
+      <div class="recommendation-item">
+        <i class="fas fa-users text-warning me-2"></i>الانضمام لمجموعات الدعم النفسي
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-users text-warning me-2"></i>التحدث مع أشخاص مروا بتجارب مشابهة
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-users text-warning me-2"></i>ممارسة تقنيات التأمل واليقظة الذهنية
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-users text-warning me-2"></i>تتبع الأعراض في دفتر يومي
+      </div>
     `;
     icon = 'fas fa-users';
   } else if (score <= 25) {
@@ -51,12 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
     recommendation = 'التحدث مع طبيب';
     detailedMessage = `
       <p class="mb-3">أعراضك عالية نسبياً. نوصي بشدة بـ:</p>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-user-md text-danger me-2"></i>استشارة طبيب نفسي متخصص</li>
-        <li><i class="fas fa-user-md text-danger me-2"></i>الحصول على تقييم شامل للحالة</li>
-        <li><i class="fas fa-user-md text-danger me-2"></i>البدء في خطة علاج منظمة</li>
-        <li><i class="fas fa-user-md text-danger me-2"></i>الانضمام لمجموعات الدعم المتخصصة</li>
-      </ul>
+      <div class="recommendation-item">
+        <i class="fas fa-user-md text-danger me-2"></i>استشارة طبيب نفسي متخصص
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-user-md text-danger me-2"></i>الحصول على تقييم شامل للحالة
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-user-md text-danger me-2"></i>البدء في خطة علاج منظمة
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-user-md text-danger me-2"></i>الانضمام لمجموعات الدعم المتخصصة
+      </div>
     `;
     icon = 'fas fa-user-md';
   } else {
@@ -65,12 +83,18 @@ document.addEventListener('DOMContentLoaded', () => {
     recommendation = 'استشارة طبيب عاجلة';
     detailedMessage = `
       <p class="mb-3 text-danger fw-bold">أعراضك حرجة وتتطلب تدخل فوري:</p>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-exclamation-triangle text-danger me-2"></i>استشارة طبيب نفسي فورية</li>
-        <li><i class="fas fa-exclamation-triangle text-danger me-2"></i>الحصول على دعم طبي متخصص</li>
-        <li><i class="fas fa-exclamation-triangle text-danger me-2"></i>البقاء تحت إشراف طبي منتظم</li>
-        <li><i class="fas fa-exclamation-triangle text-danger me-2"></i>تجنب العزلة والبقاء على تواصل مع الدعم</li>
-      </ul>
+      <div class="recommendation-item">
+        <i class="fas fa-exclamation-triangle text-danger me-2"></i>استشارة طبيب نفسي فورية
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-exclamation-triangle text-danger me-2"></i>الحصول على دعم طبي متخصص
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-exclamation-triangle text-danger me-2"></i>البقاء تحت إشراف طبي منتظم
+      </div>
+      <div class="recommendation-item">
+        <i class="fas fa-exclamation-triangle text-danger me-2"></i>تجنب العزلة والبقاء على تواصل مع الدعم
+      </div>
     `;
     icon = 'fas fa-exclamation-triangle';
   }
@@ -85,15 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
   message.innerHTML = `
     <div class="row">
       <div class="col-md-8">
-        ${detailedMessage}
+        <div class="result-card">
+          ${detailedMessage}
+        </div>
       </div>
       <div class="col-md-4">
-        <div class="card bg-light">
-          <div class="card-body text-center">
-            <h6 class="card-title">الدرجة الإجمالية</h6>
-            <div class="display-4 text-primary fw-bold">${score}</div>
-            <small class="text-muted">من أصل 25</small>
+        <div class="text-center">
+          <div class="score-display">
+            ${score}
           </div>
+          <h6 class="text-muted">الدرجة الإجمالية</h6>
+          <small class="text-muted">من أصل 25</small>
         </div>
       </div>
     </div>

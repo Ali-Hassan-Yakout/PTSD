@@ -119,7 +119,7 @@
     }
   </style>
 </head>
-<body data-role="patient">
+<body data-role="doctor">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
@@ -128,13 +128,21 @@
         منصة دعم PTSD
       </a>
       <div class="navbar-nav ms-auto">
-        <a class="nav-link text-white" href="questionnaire.html">
-          <i class="fas fa-clipboard-list me-1"></i>
-          الاستبيان
+        <span class="navbar-text text-white me-3">
+          <i class="fas fa-user-md me-1"></i>
+          <span id="doctorName">طبيب</span>
+        </span>
+        <a class="nav-link text-white" href="doctor-dashboard.html">
+          <i class="fas fa-tachometer-alt me-1"></i>
+          لوحة التحكم
         </a>
-        <a class="nav-link text-white" href="chat-patient.html">
-          <i class="fas fa-comments me-1"></i>
-          التحدث مع طبيب
+        <a class="nav-link text-white" href="add-report.html">
+          <i class="fas fa-file-medical me-1"></i>
+          إضافة تقرير
+        </a>
+        <a class="nav-link text-white" href="#" id="logoutBtn">
+          <i class="fas fa-sign-out-alt me-1"></i>
+          تسجيل الخروج
         </a>
       </div>
     </div>
@@ -145,9 +153,9 @@
       <div class="report-header">
         <h3 class="mb-2">
           <i class="fas fa-file-medical me-2"></i>
-          عرض التقرير الطبي
+          عرض التقارير الطبية
         </h3>
-        <p class="mb-0">اطلع على تقريرك الطبي والتوصيات</p>
+        <p class="mb-0">اطلع على تقارير المرضى والتوصيات</p>
       </div>
       
       <div class="report-body">
@@ -155,9 +163,9 @@
           <div class="col-md-8">
             <label for="userIdInput" class="form-label">
               <i class="fas fa-user me-1"></i>
-              معرّف المستخدم:
+              معرّف المريض:
             </label>
-            <input type="text" id="userIdInput" class="form-control" placeholder="أدخل معرّف المستخدم" />
+            <input type="text" id="userIdInput" class="form-control" placeholder="أدخل معرّف المريض" />
           </div>
           <div class="col-md-4">
             <label class="form-label">&nbsp;</label>
@@ -178,7 +186,7 @@
         <div class="mt-4">
           <div class="alert alert-info">
             <i class="fas fa-info-circle me-2"></i>
-            <strong>ملاحظة:</strong> يمكنك الوصول لتقريرك الطبي باستخدام معرّف المستخدم الخاص بك
+            <strong>ملاحظة:</strong> يمكنك الوصول لتقارير المرضى باستخدام معرّف المريض
           </div>
         </div>
       </div>

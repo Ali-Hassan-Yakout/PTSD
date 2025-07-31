@@ -1,5 +1,37 @@
 const db = firebase.firestore();
 
+// Initialize doctor name and logout functionality
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const user = firebase.auth().currentUser;
+    if (user) {
+      const userDoc = await db.collection('users').doc(user.uid).get();
+      if (userDoc.exists) {
+        const userData = userDoc.data();
+        const doctorNameElement = document.getElementById('doctorName');
+        if (doctorNameElement) {
+          doctorNameElement.textContent = userData.fullName || 'طبيب';
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Error loading doctor name:', error);
+  }
+
+  // Handle logout
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        await firebase.auth().signOut();
+        window.location.href = 'login.html';
+      } catch (error) {
+        console.error('Error signing out:', error);
+      }
+    });
+  }
+});
+
 async function getReport() {
   const userId = document.getElementById("userIdInput").value.trim();
   const container = document.getElementById("reportContainer");
@@ -9,7 +41,7 @@ async function getReport() {
   container.style.display = "none";
 
   if (!userId) {
-    alert("من فضلك أدخل معرف المستخدم");
+    alert("من فضلك أدخل معرف المريض");
     return;
   }
 
@@ -38,7 +70,7 @@ async function getReport() {
       container.innerHTML = `
         <div class="alert alert-warning">
           <i class="fas fa-exclamation-circle me-2"></i>
-          لا يوجد تقرير مرتبط بهذا المعرف.
+          لا يوجد تقرير مرتبط بهذا المريض.
         </div>
       `;
       return;
