@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>محادثة مع مريض</title>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+  <!-- Firebase Config -->
+  <script src="firebase-config.js"></script>
+
+  <!-- Styles -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9fc;
+      direction: rtl;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #3a8daa;
+      text-align: center;
+    }
+
+    select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #3a8daa;
+      color: white;
+      cursor: pointer;
+    }
+
+    .chat-box {
+      margin-top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .msg {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 75%;
+      word-wrap: break-word;
+    }
+
+    .msg.you {
+      background: #d4edda;
+      margin-left: auto;
+      text-align: left;
+    }
+
+    .msg.other {
+      background: #e6f2ff;
+      margin-right: auto;
+      text-align: right;
+    }
+
+    .timestamp {
+      font-size: 12px;
+      color: gray;
+      margin-top: 5px;
+      text-align: left;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+
+  <!-- Script -->
+  <script defer src="chat-doctor.js"></script>
+</head>
+<body>
+
+<h2>محادثة مع مريض</h2>
+
+<label>اختر المريض:</label>
+<select id="patientSelect" onchange="loadMessages()">
+  <option disabled selected>تحميل المرضى...</option>
+</select>
+
+<textarea id="messageInput" placeholder="اكتب الرسالة هنا..."></textarea>
+<button onclick="sendMessage()">إرسال</button>
+
+<div class="chat-box" id="chatBox">تحميل المحادثة...</div>
+<div class="error" id="errorBox"></div>
+
+</body>
+</html>

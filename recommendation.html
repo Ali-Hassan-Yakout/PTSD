@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>نتيجة التقييم</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9fc;
+      text-align: center;
+      direction: rtl;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      color: #3a8daa;
+      margin-bottom: 20px;
+    }
+    .highlight {
+      color: #e74c3c;
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #3a8daa;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .btn:hover {
+      background-color: #2c6f8a;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>الحل المقترح لحالتك</h2>
+  <p class="highlight" id="main-recommendation">جارٍ التحميل...</p>
+  <p>يمكنك أيضًا تجربة الحلول الأخرى:</p>
+  <a href="self-help.html" class="btn">أدوات المساعدة الذاتية</a>
+  <a href="group-support.html" class="btn">الدعم الجماعي</a>
+  <a href="go-doctor.html" class="btn">التحدث مع طبيب</a>
+</div>
+
+<script>
+  const score = parseInt(localStorage.getItem("assessmentScore") || 0);
+  const mainRec = document.getElementById('main-recommendation');
+
+  if (score <= 9) {
+    mainRec.textContent = "أدوات المساعدة الذاتية";
+  } else if (score <= 17) {
+    mainRec.textContent = "الدعم الجماعي";
+  } else {
+    mainRec.textContent = "التحدث مع طبيب مختص";
+  }
+</script>
+
+</body>
+</html>
